@@ -1,6 +1,6 @@
 package com.tist.service;
 
-import com.tist.player.Player;
+import com.tist.domain.Player;
 
 import java.util.List;
 

@@ -1,6 +1,5 @@
-package com.tist.Player;
+package com.tist.domain;
 
-import com.tist.player.Player;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,7 +11,7 @@ import java.util.Date;
 @SpringBootTest
 public class PlayerTest {
     @Test
-    public void playTest() {
+    public void playerTest() {
 
         Player player = new Player();
 
@@ -23,10 +22,5 @@ public class PlayerTest {
         player.setStartDate(new Date());
 
         System.out.println(player.toString());
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
     }
 }

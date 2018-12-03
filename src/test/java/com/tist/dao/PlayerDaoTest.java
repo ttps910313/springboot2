@@ -1,20 +1,16 @@
 package com.tist.dao;
 
-import com.tist.player.Player;
+import com.tist.domain.Player;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
-import javax.transaction.Transactional;
 import java.util.Date;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-@Transactional
+//@RunWith(SpringRunner.class)
+//@SpringBootTest
+//@Transactional
 public class PlayerDaoTest {
     @Resource
     private PlayerDao dao;

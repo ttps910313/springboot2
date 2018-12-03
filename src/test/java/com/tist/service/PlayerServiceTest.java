@@ -1,7 +1,6 @@
-package com.tist.Service;
+package com.tist.service;
 
-import com.tist.player.Player;
-import com.tist.service.PlayerService;
+import com.tist.domain.Player;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
