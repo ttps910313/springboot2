@@ -1,40 +1,33 @@
 package com.tist.service.impl;
 
 import com.tist.domain.Player;
+import com.tist.repository.PlayerRepository;
 import com.tist.service.PlayerService;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @Service
-public abstract class PlayerServiceImpl implements PlayerService {
+public class PlayerServiceImpl implements PlayerService {
 
-//    @Resource
-//    private PlayerDao dao;
+    @Resource
+    private PlayerRepository repository;
 
-    public void create() {
-//        dao.create();
-    }
 
     public void insert(Player player) {
-//        dao.insert(player);
+        repository.save(player);
     }
 
     public void delete(Integer no) {
-//        dao.delete(no);
+        repository.delete(repository.getOne(no));
     }
 
-    public void update(Player player) {
-//        dao.update(player);
-    }
-
-    public List<Player> find() {
-//        return dao.find();
-        return null;
+    public List<Player> findAll() {
+        return repository.findAll();
     }
 
     public Player findOne(Player player) {
-//        return dao.findOne(player);
-        return null;
+        return repository.getOne(player.getNo());
     }
 }

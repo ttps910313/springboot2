@@ -43,6 +43,6 @@ public class Equipment {
     private String kind;
 
     @ManyToOne
-    @JoinColumn(name = "player_id_")
+    @JoinColumn(name = "player_no_")
     private Player player;
 }

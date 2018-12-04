@@ -1,6 +1,5 @@
 package com.tist.repository;
 
-import com.tist.domain.Player;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
