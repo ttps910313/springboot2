@@ -1,14 +1,15 @@
 package com.tist.service;
 
 import com.tist.domain.Player;
+import org.springframework.data.jpa.repository.JpaRepository;
+/**
+ *
+ *    @author Sam
+ */
+public interface PlayerService extends JpaRepository<Player, Integer> {
 
-import java.util.List;
-
-public interface PlayerService {
-    void create();
-    void insert(Player player);
-    void delete(Integer no);
-    void update(Player player);
-    List<Player> find();
-    Player findOne(Player player);
+    /**
+     *     透過角色編號及角色名稱搜尋
+     */
+    Player findByNoAndName(Integer no, String name);
 }

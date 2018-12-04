@@ -9,6 +9,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import javax.annotation.Resource;
 import javax.transaction.Transactional;
 import java.util.Date;
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -22,34 +23,21 @@ public class PlayerServiceTest {
 
     @Test
     public void serviceTest() {
-        ps.create();
 
         Player player = new Player();
-        player.setNo(0);
-        player.setName("sam");
+        player.setNo(5);
+        player.setName("sam5");
+        player.setMoney(5000.0);
         player.setIsMale(true);
-        player.setMoney(1000000000.0);
-        player.setStartDate(new Date());
+        player.setStartDate(null);
+        ps.save(player);
+        assertThat(ps).isNotNull();
 
-        ps.insert(player);
-        player.setNo(2);
-        ps.insert(player);
-        System.err.println(ps.find());
+        List<Player> players = ps.findAll();
+        players.forEach(System.err::println);
+        assertThat(players).isNotNull();
 
-        Player target = new Player();
-        target.setNo(0);
-        target.setName("11111111");
-        ps.update(target);
-        System.err.println(target);
-
-        ps.delete(2);
-
-        assertThat(ps.find()).isNotNull();
-        System.err.println(ps.find());
-        //assertThat(ps.find()).isNotNull();
-
-        Player targetTwo = ps.findOne(target);
-        assertThat(targetTwo).isNotNull();
-        System.err.println(targetTwo);
+        Player player2 = ps.findByNoAndName(5, "sam5");
+        assertThat(player2).isNotNull();
     }
 }
