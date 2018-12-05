@@ -2,3 +2,4 @@ INSERT INTO PLAYER VALUES(1, true, 10000.0, 'sam1', null);
 INSERT INTO PLAYER VALUES(2, true, 20000.0, 'sam2', null);
 INSERT INTO PLAYER VALUES(3, true, 30000.0, 'sam3', null);
 INSERT INTO PLAYER VALUES(4, true, 40000.0, 'sam4', null);
+INSERT INTO EQUIPMENT  VALUES (0, 100, 'yellow', 100, 'weapon', 1);

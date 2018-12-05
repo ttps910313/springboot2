@@ -8,7 +8,7 @@ import lombok.Data;
 import javax.persistence.*;
 
 /**
- *
+ *    Player entity設計
  *    @author Sam
  */
 @Data
@@ -46,6 +46,9 @@ public class Player {
     @Column(name = "money_")
     private Double money;
 
+    /**
+         * 多個角色擁有多個裝備
+         */
     @ManyToMany
     @JoinTable(
             name = "player_equiment",

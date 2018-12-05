@@ -12,17 +12,25 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+/**
+ * PlayerService測試
+ * 主要測試新增、查詢、刪除
+ */
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@Transactional
 public class PlayerServiceTest {
 
     @Resource
     private PlayerService ps;
 
     @Test
-    @Transactional
     public void playerServiceTest() {
 
+        /**
+                 * 新增資料測試
+                 */
         Player player = new Player();
         player.setNo(5);
         player.setName("sam5");
@@ -32,14 +40,17 @@ public class PlayerServiceTest {
         ps.insert(player);
         assertThat(ps).isNotNull();
 
+        /**
+                 * 查詢資料測試
+                 */
         List<Player> players = ps.findAll();
         players.forEach(System.err::println);
         assertThat(players).isNotNull();
 
-        assertThat(ps.findOne(player)).isNotNull();
-
+        /**
+                 * 刪除資料測試
+                 */
         ps.delete(5);
-
         Player disappear = ps.findOne(player);
         assertThat(disappear).isNull();
 

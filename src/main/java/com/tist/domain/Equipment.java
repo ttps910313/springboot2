@@ -5,7 +5,7 @@ import lombok.Data;
 import javax.persistence.*;
 
 /**
- *
+ *    Equipment entity設計
  *    @author Sam
  */
 @Data
@@ -42,6 +42,9 @@ public class Equipment {
     @Column(name = "kind_")
     private String kind;
 
+    /**
+         * 多個裝備屬於一個角色
+         */
     @ManyToOne
     @JoinColumn(name = "player_no_")
     private Player player;
