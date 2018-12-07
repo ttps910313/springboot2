@@ -23,7 +23,7 @@ public class Player {
     private Integer no;
 
     /**
-     * 角色名'稱
+     * 角色名稱
      */
     @Column(name = "name_")
     private String name;
@@ -47,8 +47,8 @@ public class Player {
     private Double money;
 
     /**
-         * 多個角色擁有多個裝備
-         */
+     * 多個角色擁有多個裝備
+     */
     @ManyToMany
     @JoinTable(
             name = "player_equiment",
@@ -57,4 +57,5 @@ public class Player {
             uniqueConstraints = @UniqueConstraint(
                     columnNames = {"player_no_", "equiment_id_"}))
     List<Equipment> equipments;
+
 }

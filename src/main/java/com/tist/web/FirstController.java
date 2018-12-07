@@ -9,7 +9,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @Controller
-@RequestMapping("/test")
+@RequestMapping(value = "/test")
 public class FirstController {
 
     @Resource
@@ -20,11 +20,10 @@ public class FirstController {
         return "homework.html";
     }
 
-    @RequestMapping(value = "players", method = RequestMethod.GET)
+    @RequestMapping(value = "/players", method = RequestMethod.GET)
     @ResponseBody
     public List<Player> players() {
         return playerService.findAll();
     }
-
 
 }

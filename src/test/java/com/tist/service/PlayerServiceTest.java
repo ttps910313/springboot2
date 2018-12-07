@@ -41,15 +41,15 @@ public class PlayerServiceTest {
         assertThat(ps).isNotNull();
 
         /**
-                 * 查詢資料測試
-                 */
+         * 查詢資料測試
+         */
         List<Player> players = ps.findAll();
         players.forEach(System.err::println);
         assertThat(players).isNotNull();
 
         /**
-                 * 刪除資料測試
-                 */
+         * 刪除資料測試
+         */
         ps.delete(5);
         Player disappear = ps.findOne(player);
         assertThat(disappear).isNull();

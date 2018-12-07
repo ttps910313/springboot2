@@ -26,7 +26,7 @@ public class EquipmentRepositoryTest {
 
     @Resource
     private EquipmentRepository repository;
-
+    
     @Test
     public void test() {
         /**
